@@ -7,18 +7,20 @@
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Doom-style Web Game">
-    <meta property="og:description" content="Experience a Doom-inspired FPS game right in your browser! Explore randomly generated levels, avoid walls, and enjoy the classic feel of 90s shooters.">
+    <meta property="og:description" content="Experience a Doom-inspired game right in your browser! Explore randomly generated levels and avoid walls.">
     <meta property="og:image" content="https://your-game-screenshot.com/doom-style-game.png">
     <meta property="og:url" content="https://your-hosted-game-url.com">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Browser FPS Game">
+    <meta property="og:site_name" content="Browser Game">
 
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
     <style>
-        body { margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: #000; }
+        body { margin: 0; padding: 0; background: #000; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        #game-container { width: 800px; height: 600px; }
     </style>
 </head>
 <body>
+    <div id="game-container"></div>
     <script src="game.js"></script>
 </body>
 </html>
