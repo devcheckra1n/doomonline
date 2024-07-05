@@ -2,10 +2,18 @@ const config = {
     type: Phaser.AUTO,
     width: 800,
     height: 600,
+    parent: 'game-container',
+    backgroundColor: '#2d2d2d',
     scene: {
         preload: preload,
         create: create,
         update: update
+    },
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 0 }
+        }
     }
 };
 
@@ -20,8 +28,8 @@ const MAP_SIZE = 16;
 const TILE_SIZE = 64;
 
 function preload() {
-    this.load.image('wall', 'assets/wall.png');
-    this.load.image('gun', 'assets/gun.png');
+    this.load.image('wall', 'wall.png');
+    this.load.image('gun', 'gun.png');
 }
 
 function create() {
@@ -31,7 +39,7 @@ function create() {
     for (let y = 0; y < MAP_SIZE; y++) {
         for (let x = 0; x < MAP_SIZE; x++) {
             if (gameMap[y][x] === 1) {
-                walls.create(x * TILE_SIZE, y * TILE_SIZE, 'wall').setOrigin(0);
+                walls.create(x * TILE_SIZE + TILE_SIZE / 2, y * TILE_SIZE + TILE_SIZE / 2, 'wall');
             }
         }
     }
